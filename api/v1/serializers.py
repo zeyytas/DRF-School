@@ -23,7 +23,7 @@ class ExamSerializer(ModelSerializer):
             elif 90 <= obj.get('grade') <= 100:
                 return 'A'
 
-        except (AttributeError, ZeroDivisionError):
+        except (AttributeError, TypeError, ZeroDivisionError):
             return None
 
     def __init__(self, *args, **kwargs):

@@ -79,7 +79,7 @@ GET         /api/v1/exam? </small>
    
    ```e.g  ?group_by=student_name,date```
    
-    - grade </br>
+   - grade </br>
    This attribute should be used with group_by
    ```
      0< grade <20 F 

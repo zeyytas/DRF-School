@@ -74,7 +74,13 @@ GET         /api/v1/exam? </small>
    
    ```e.g  ?show=teacher_name```
    
+   - group_by </br>
+   This attribute provides broken down attribute with which field
+   
+   ```e.g  ?group_by=student_name,date```
+   
    - grade </br>
+   This attribute should be used with group_by
    ```
      0< grade <20 F 
      20<= grade <50 E 
@@ -84,11 +90,6 @@ GET         /api/v1/exam? </small>
      90<= grade <=100 A
    ```
    
-   ```e.g.   ?show=grade&group_by=student_name,course_name```
+   ```e.g.   ?show=grade&group_by=student_name,course_name``` </br>
    ```e.g.   ?show=grade&student_name=Lisa-Simpson,Bart-Simpson&group_by=student_name,course_name```
-
-   - group_by </br>
-   This attribute provides broken down attribute with which field
-   
-   ```e.g  ?group_by=student_name,date```
 </small>

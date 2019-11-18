@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ## Action
 <small>
    
-GET         /api/v1? </small>
+GET         /api/v1/exam? </small>
 
 ## Attributes
 
@@ -48,12 +48,12 @@ GET         /api/v1? </small>
    
    - name
 
-   ```e.g.   ?name=mathematics```
+   ```e.g.   ?name=mathematics,art```
 
 
    - student_name
 
-   ```e.g.   ?student_name=Lisa-Simpson&Bart-Simpson```
+   ```e.g.   ?student_name=Lisa-Simpson,Bart-Simpson```
    
    
    - teacher_name
@@ -84,10 +84,11 @@ GET         /api/v1? </small>
      90<= grade <=100 A
    ```
    
-   ```e.g.   ?show=grade```
+   ```e.g.   ?show=grade&group_by=student_name,course_name```
+   ```e.g.   ?show=grade&student_name=Lisa-Simpson,Bart-Simpson&group_by=student_name,course_name```
 
    - group_by </br>
    This attribute provides broken down attribute with which field
    
-   ```e.g  ?group_by=studen_name&date```
+   ```e.g  ?group_by=student_name,date```
 </small>

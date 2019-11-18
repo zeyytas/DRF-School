@@ -26,7 +26,6 @@ class CustomFilter(django_filters.FilterSet):
         sort_by = self.request.GET.get('sort_by')
         group_by = self.request.GET.get('group_by')
 
-        queryset = self.queryset
         queryset = super(CustomFilter, self).qs
 
         if show and 'grade' not in show:
@@ -34,14 +33,19 @@ class CustomFilter(django_filters.FilterSet):
             queryset = queryset.values(*shows)
 
         if student_name:
+            queryset = self.queryset
             student_name = list(map(lambda x: ' '.join(x.split('-')), student_name.split(',')))
             queryset = queryset.filter(student_name__in=student_name)
 
         if teacher_name:
+            if not student_name:
+                queryset = self.queryset
             teacher_name = list(map(lambda x: ' '.join(x.split('-')), teacher_name.split(',')))
             queryset = queryset.filter(teacher_name__in=teacher_name)
 
         if course_name:
+            if not student_name and teacher_name:
+                queryset = self.queryset
             queryset = queryset.filter(course_name__in=course_name.split(','))
 
         if group_by:
@@ -60,6 +64,8 @@ class CustomFilter(django_filters.FilterSet):
                 queryset = queryset.order_by('-{}'.format(sort_by[0]))
             else:
                 queryset = queryset.order_by(sort_by[0])
+
+
 
         return queryset
 

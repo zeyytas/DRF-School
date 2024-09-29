@@ -5,7 +5,7 @@ DRF-school provides couple of filtering, grouping and sorting actions on Exam da
 
 ## Installation
 
-First, start by closing the repository:
+First, start by cloning the repository:
 
 ```
 git clone https://github.com/zeyytas/DRF-school.git
